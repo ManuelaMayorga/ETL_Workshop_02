@@ -1,0 +1,13 @@
+data/
+logs/
+__pycache__/
+.env
+client_secrets.json
+credentials_module.json
+settings.yaml
+airflow-webserver.pid
+airflow.cfg
+airflow.db
+standalone_admin_password.txt
+webserver_config.py
+venv/
