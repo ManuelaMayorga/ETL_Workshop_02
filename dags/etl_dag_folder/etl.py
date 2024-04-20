@@ -149,6 +149,7 @@ def transform_spotify_data(json_data):
 
 
 #### MERGE
+
 def merge(json_df1, json_df2):
     """
     Merges two JSON datasets based on specific columns, fills null values, and performs additional data processing.
@@ -187,7 +188,15 @@ def merge(json_df1, json_df2):
 
     
 def load_merge(json_data):
+    """
+    Loads JSON data into a DataFrame, performs a merge operation, and inserts the merged data into a database table.
 
+    Args:
+    json_data (str): JSON string containing the data to be loaded and merged.
+
+    Returns:
+    str: JSON string representing the merged data.
+    """
     json_data = json.loads(json_data)
     df = pd.DataFrame(json_data)
 
@@ -221,8 +230,15 @@ def load_merge(json_data):
 
 directorio_credentiales = 'credentials_module.json'
 
-#INICIO DE AUTENTICACION PYDRIVE
+### START OF PYDRIVE AUTHENTICATION
+
 def login():
+    """
+    Authenticates with Google Drive using PyDrive.
+
+    Returns:
+    GoogleDrive: GoogleDrive instance for accessing Drive API.
+    """
     gauth = GoogleAuth()
     gauth.LoadCredentialsFile(directorio_credentiales)
 
@@ -235,8 +251,18 @@ def login():
     return GoogleDrive(gauth)
 
 
-def subir_archivo(json_data, file_title, id_folder):
-    
+def file_upload(json_data, file_title, id_folder):
+    """
+    Uploads a CSV file to the specified directory in Google Drive.
+
+    Args:
+    json_data (str): JSON string containing the data to be converted to CSV and uploaded to the file.
+    file_title (str): Title of the file to be uploaded.
+    id_folder (str): ID of the Google Drive directory where the file will be uploaded.
+
+    Returns:
+    None
+    """
     json_data = json.loads(json_data)
     df = pd.DataFrame(json_data)
 
@@ -251,3 +277,6 @@ def subir_archivo(json_data, file_title, id_folder):
     file.SetContentString(df_to_csv) 
     file.Upload()
 
+### References PyDrive
+# MoonCode. (2021, 7 marzo). Aprende a usar Google Drive con Python en 20 minutos 😃💻-Learn Python and Google Drive in 20 minutes [Vídeo]. YouTube. https://www.youtube.com/watch?v=ZI4XjwbpEwU 
+# Welcome to PyDrive’s documentation! — PyDrive 1.2.1 documentation. (s. f.). https://pythonhosted.org/PyDrive/ 

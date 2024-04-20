@@ -54,7 +54,7 @@ def etl_dag():
     
     @task
     def store(json_data):
-        return subir_archivo(json_data, 'data_music.csv', '13KAmiIkiZe7Rb0YDuE_vI0gkfERbICmn') 
+        return file_upload(json_data, 'data_music.csv', '13KAmiIkiZe7Rb0YDuE_vI0gkfERbICmn') 
 
     grammys_read = db_connect()
     transformation_grammys = transform_db(grammys_read)

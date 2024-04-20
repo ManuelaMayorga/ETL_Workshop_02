@@ -104,7 +104,7 @@ def drop_columns(df):
 
 def reemplazar_none_nan(df, valor_reemplazo):
     """
-    This function replaces None values with NaN in integer columns of the DataFrame.
+    This function replaces None values with NaN in integer columns of the DataFramer.
 
     Parameters:
     - df: DataFrame containing data.
