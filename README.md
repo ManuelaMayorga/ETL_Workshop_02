@@ -120,7 +120,7 @@ Steps in VM
     - And run the dag
 
 If you have all the files and credentials fine, the dag must be working good
-![image](https://github.com/ManuelaMayorga/Workshop-2/assets/111150858/e0399817-eddf-42c0-a858-87d848958391)
+![Imagen de WhatsApp 2024-04-21 a las 14 36 59_c4ecaf5f](https://github.com/ManuelaMayorga/Workshop-2/assets/111150858/c7ded123-0497-4e4b-ac86-062a26b38643)
 
 11. Once the dag has finished, Postgres should have 2 new tables and then you can go to PowerBi on Windows
 
